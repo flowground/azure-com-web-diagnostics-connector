@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 90,
+            "pattern": "^[-\\w\\._\\(\\)]+[^\\.]$"
+        },
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "detectorName": {
+            "required": true,
+            "type": "string"
+        },
+        "startTime": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "endTime": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "timeGrain": {
+            "type": "string",
+            "pattern": "PT[1-9][0-9]+[SMH]"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

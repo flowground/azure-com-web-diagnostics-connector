@@ -1,0 +1,423 @@
+{
+    "title": "Diagnostics API Client",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/azure.com/web-Diagnostics/2018-02-01/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://management.azure.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "azure_auth": {
+                "label": "Azure Active Directory OAuth2 Flow",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://login.microsoftonline.com/common/oauth2/authorize"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Diagnostics_ListHostingEnvironmentDetectorResponses": {
+            "main": "./lib/actions/Diagnostics_ListHostingEnvironmentDetectorResponses.js",
+            "title": "List Hosting Environment Detector Responses",
+            "description": "List Hosting Environment Detector Responses",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ListHostingEnvironmentDetectorResponses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_GetHostingEnvironmentDetectorResponse": {
+            "main": "./lib/actions/Diagnostics_GetHostingEnvironmentDetectorResponse.js",
+            "title": "Get Hosting Environment Detector Response",
+            "description": "Get Hosting Environment Detector Response",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_GetHostingEnvironmentDetectorResponse.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ListSiteDetectorResponses": {
+            "main": "./lib/actions/Diagnostics_ListSiteDetectorResponses.js",
+            "title": "List Site Detector Responses",
+            "description": "List Site Detector Responses",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ListSiteDetectorResponses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_GetSiteDetectorResponse": {
+            "main": "./lib/actions/Diagnostics_GetSiteDetectorResponse.js",
+            "title": "Get site detector response",
+            "description": "Get site detector response",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_GetSiteDetectorResponse.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ListSiteDiagnosticCategories": {
+            "main": "./lib/actions/Diagnostics_ListSiteDiagnosticCategories.js",
+            "title": "Get Diagnostics Categories",
+            "description": "Get Diagnostics Categories",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ListSiteDiagnosticCategories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_GetSiteDiagnosticCategory": {
+            "main": "./lib/actions/Diagnostics_GetSiteDiagnosticCategory.js",
+            "title": "Get Diagnostics Category",
+            "description": "Get Diagnostics Category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_GetSiteDiagnosticCategory.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ListSiteAnalyses": {
+            "main": "./lib/actions/Diagnostics_ListSiteAnalyses.js",
+            "title": "Get Site Analyses",
+            "description": "Get Site Analyses",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ListSiteAnalyses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_GetSiteAnalysis": {
+            "main": "./lib/actions/Diagnostics_GetSiteAnalysis.js",
+            "title": "Get Site Analysis",
+            "description": "Get Site Analysis",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_GetSiteAnalysis.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ExecuteSiteAnalysis": {
+            "main": "./lib/actions/Diagnostics_ExecuteSiteAnalysis.js",
+            "title": "Execute Analysis",
+            "description": "Execute Analysis",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ExecuteSiteAnalysis.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ListSiteDetectors": {
+            "main": "./lib/actions/Diagnostics_ListSiteDetectors.js",
+            "title": "Get Detectors",
+            "description": "Get Detectors",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ListSiteDetectors.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_GetSiteDetector": {
+            "main": "./lib/actions/Diagnostics_GetSiteDetector.js",
+            "title": "Get Detector",
+            "description": "Get Detector",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_GetSiteDetector.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ExecuteSiteDetector": {
+            "main": "./lib/actions/Diagnostics_ExecuteSiteDetector.js",
+            "title": "Execute Detector",
+            "description": "Execute Detector",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ExecuteSiteDetector.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ListSiteDetectorResponsesSlot": {
+            "main": "./lib/actions/Diagnostics_ListSiteDetectorResponsesSlot.js",
+            "title": "List Site Detector Responses",
+            "description": "List Site Detector Responses",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ListSiteDetectorResponsesSlot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_GetSiteDetectorResponseSlot": {
+            "main": "./lib/actions/Diagnostics_GetSiteDetectorResponseSlot.js",
+            "title": "Get site detector response",
+            "description": "Get site detector response",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_GetSiteDetectorResponseSlot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ListSiteDiagnosticCategoriesSlot": {
+            "main": "./lib/actions/Diagnostics_ListSiteDiagnosticCategoriesSlot.js",
+            "title": "Get Diagnostics Categories",
+            "description": "Get Diagnostics Categories",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ListSiteDiagnosticCategoriesSlot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_GetSiteDiagnosticCategorySlot": {
+            "main": "./lib/actions/Diagnostics_GetSiteDiagnosticCategorySlot.js",
+            "title": "Get Diagnostics Category",
+            "description": "Get Diagnostics Category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_GetSiteDiagnosticCategorySlot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ListSiteAnalysesSlot": {
+            "main": "./lib/actions/Diagnostics_ListSiteAnalysesSlot.js",
+            "title": "Get Site Analyses",
+            "description": "Get Site Analyses",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ListSiteAnalysesSlot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_GetSiteAnalysisSlot": {
+            "main": "./lib/actions/Diagnostics_GetSiteAnalysisSlot.js",
+            "title": "Get Site Analysis",
+            "description": "Get Site Analysis",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_GetSiteAnalysisSlot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ExecuteSiteAnalysisSlot": {
+            "main": "./lib/actions/Diagnostics_ExecuteSiteAnalysisSlot.js",
+            "title": "Execute Analysis",
+            "description": "Execute Analysis",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ExecuteSiteAnalysisSlot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ListSiteDetectorsSlot": {
+            "main": "./lib/actions/Diagnostics_ListSiteDetectorsSlot.js",
+            "title": "Get Detectors",
+            "description": "Get Detectors",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ListSiteDetectorsSlot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_GetSiteDetectorSlot": {
+            "main": "./lib/actions/Diagnostics_GetSiteDetectorSlot.js",
+            "title": "Get Detector",
+            "description": "Get Detector",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_GetSiteDetectorSlot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Diagnostics_ExecuteSiteDetectorSlot": {
+            "main": "./lib/actions/Diagnostics_ExecuteSiteDetectorSlot.js",
+            "title": "Execute Detector",
+            "description": "Execute Detector",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Diagnostics_ExecuteSiteDetectorSlot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
